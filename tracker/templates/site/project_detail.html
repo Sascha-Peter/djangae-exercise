@@ -32,6 +32,9 @@
 
 							</i>
 						</a>
+						<a href="{% url 'ticket-delete' pk=ticket.pk  project_id=project.pk %}">
+							<i class="fi-trash"></i>
+						</a>
 					</td>
 				</tr>
 				{% endfor %}
