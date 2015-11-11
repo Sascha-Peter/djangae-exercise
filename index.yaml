@@ -10,6 +10,18 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: djangae_gaedatastoreuser
+  ancestor: yes
+  properties:
+  - name: __key__
+  - name: email
+
+- kind: djangae_gaedatastoreuser
+  ancestor: yes
+  properties:
+  - name: __key__
+  - name: username
+
 - kind: django_content_type
   properties:
   - name: app_label
@@ -36,6 +48,13 @@ indexes:
 - kind: site_ticket
   properties:
   - name: assignees_ids
+  - name: modified
+    direction: desc
+  - name: created
+    direction: desc
+
+- kind: site_ticket
+  properties:
   - name: modified
     direction: desc
   - name: created
