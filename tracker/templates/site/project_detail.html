@@ -17,7 +17,7 @@
 			<tbody>
 				{% for ticket in tickets %}
 				<tr>
-					<td>{{ ticket.title }}</td>
+					<td>{{ ticket.title|truncatechars:"60" }}</td>
 					<td>
 					{% for user in ticket.assignees.all %}
 						{{ user.email }}{% if not forloop.last %},{% endif %}
