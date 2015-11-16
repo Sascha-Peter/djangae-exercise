@@ -1,3 +1,10 @@
+"""This file provides all views for project and ticket management
+
+author: Potato
+version: 1.0.0
+
+change: SP 2015-11-11 - Add ticket deletion url
+"""
 from django.conf.urls import url, patterns
 
 from .views import (

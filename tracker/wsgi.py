@@ -1,5 +1,4 @@
-"""
-WSGI config for scaffold project.
+"""WSGI config for scaffold project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -17,7 +16,5 @@ from djangae.utils import on_production
 
 settings = "tracker.settings_live" if on_production() else "tracker.settings"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings)
-
-
 
 application = DjangaeApplication(get_wsgi_application())

@@ -1,3 +1,10 @@
+"""This file provides all views for project and ticket management
+
+author: Potato
+version: 1.0.0
+
+change: SP 2015-11-11 - Implement ticket deletion view
+"""
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
@@ -145,6 +152,11 @@ update_ticket_view = login_required(UpdateTicketView.as_view())
 
 
 class DeleteTicketView(DeleteView):
+    """This view handles deletion of tickets
+
+    author: Sascha Peter <sascha.o.peter@gmail.com>
+    since: 2015-11-11
+    """
     model = Ticket
 
     def get_success_url(self):
