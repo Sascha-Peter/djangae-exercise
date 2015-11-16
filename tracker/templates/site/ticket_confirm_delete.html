@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="large-8 large-centered columns">
+    <form action="" method="post">{% csrf_token %}
+        <div class="row">
+            <p>Are you sure you want to delete "{{ object }}"?</p>
+        </div>
+        <div class="row">
+            <input class="btn button" type="submit" value="Confirm" />
+        </div>
+    </form>
+</div>
+{% endblock %}
