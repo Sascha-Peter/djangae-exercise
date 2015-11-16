@@ -1,3 +1,11 @@
+"""This file contains all the project/ticket related forms.
+
+author: Potato
+version: 1.0.0
+
+change: SP 2015-11-11 - Change assignee queryset
+        SP 2015-11-11 - Adjust assignee widget for easier selection of assignees
+"""
 from django import forms
 from django.contrib.auth import get_user_model
 
@@ -42,6 +50,10 @@ class ProjectForm(BaseTrackerForm):
 
 
 class TicketForm(BaseTrackerForm):
+    """Ticket form
+
+    change: SP 2015-11-11 - Adjust widgets on assignees field for easier management of assignees
+    """
     assignees = forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple, queryset=None, required=False)
 
     class Meta:
@@ -49,6 +61,10 @@ class TicketForm(BaseTrackerForm):
         fields = ('title', 'description', 'assignees',)
 
     def __init__(self, project=None, *args, **kwargs):
+        """Sets additional initial values for the TicketForm
+
+        change: SP 2015-11-11 - Slight queryset adjustment to try to only show email addresses
+        """
         self.project = project
         super(TicketForm, self).__init__(*args, **kwargs)
 
